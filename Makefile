@@ -1,5 +1,5 @@
-CONTAINER_NAME := hcr
-TAG_NAME := sonic
+CONTAINER_NAME := hcrcont
+TAG_NAME := imatag
 IMAGE_NAME := hcrimg
 CURRENT_DIR := $(shell pwd)
 
@@ -19,7 +19,17 @@ run:
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ${CURRENT_DIR}/ros_ws/:/root/ros_ws/ \
 		--name ${CONTAINER_NAME} \
-		${IMAGE_NAME}:${TAG_NAME}
+		${IMAGE_NAME}:${TAG_NAME} \
+		/bin/bash -c "source /opt/ros/noetic/setup.bash \
+		&& cd /root/ros_ws && catkin_make \
+		&& source devel/setup.bash && rosdep install \
+		--from-paths src --ignore-src --rosdistro \
+		noetic -y && bash"
 
 exec:
-	@docker exec -it ${CONTAINER_NAME} /bin/bash
+	@docker exec -it ${CONTAINER_NAME} /bin/bash -c \
+	"source /opt/ros/noetic/setup.bash && \
+	cd /root/ros_ws && catkin_make && \
+	source devel/setup.bash && rosdep install \
+	--from-paths src --ignore-src --rosdistro \
+	noetic -y && bash"

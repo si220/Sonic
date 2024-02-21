@@ -18,6 +18,18 @@
 
 ```sudo make run```
 
+### Navigate to the p3at tutorial folder
+
+```cd src/p3at_tutorial/```
+
+### To launch the p3at gazebo simulation environment run:
+
+```roslaunch p3at_tutorial pioneer3at.gazebo.launch```
+
+### To run other ros commands from another terminal run:
+
+```sudo make exec```
+
 ### To exit the container either press `ctrl+d` or type `exit`
 
 ### To stop the container run the following command:
