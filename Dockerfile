@@ -10,8 +10,14 @@ RUN apt-get update && apt-get install -y ros-noetic-robot-state-publisher
 RUN apt-get update && apt-get install -y ros-noetic-joint-state-publisher
 RUN apt-get update && apt-get install -y ros-noetic-navigation
 RUN apt-get update && apt-get install -y ros-noetic-rviz
+RUN apt-get update && apt-get install -y ros-noetic-teleop-twist-keyboard
+RUN apt-get update && apt-get install -y net-tools
 RUN apt-get update && apt-get install -y nano
-
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/moshulu/aria-legacy.git
+RUN cd aria-legacy && make && make install
+RUN cd ..
+RUN git clone https://github.com/amor-ros-pkg/rosaria.git
 
 # CMD provides the default command to execute when starting a container
 CMD bash

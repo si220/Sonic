@@ -16,6 +16,8 @@ run:
 	@docker run \
 		-it \
 		-e DISPLAY \
+		-e ROS_IP=192.168.1.210 \
+		-e ROS_MASTER_URI=http://192.168.1.253:11311 \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ${CURRENT_DIR}/ros_ws/:/root/ros_ws/ \
 		--name ${CONTAINER_NAME} \
