@@ -18,6 +18,8 @@ RUN git clone https://github.com/moshulu/aria-legacy.git
 RUN cd aria-legacy && make && make install
 RUN cd ..
 RUN git clone https://github.com/amor-ros-pkg/rosaria.git
+RUN apt-get update && apt-get install -y ros-noetic-map-server ros-noetic-gmapping ros-noetic-slam-gmapping
+RUN apt-get update && apt-get install -y ros-noetic-rqt ros-noetic-rqt-graph
 
 # CMD provides the default command to execute when starting a container
 CMD bash
