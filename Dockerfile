@@ -20,6 +20,7 @@ RUN cd ..
 RUN git clone https://github.com/amor-ros-pkg/rosaria.git
 RUN apt-get update && apt-get install -y ros-noetic-map-server ros-noetic-gmapping ros-noetic-slam-gmapping
 RUN apt-get update && apt-get install -y ros-noetic-rqt ros-noetic-rqt-graph
+RUN apt-get update && apt-get install -y ros-noetic-explore-lite
 
 # CMD provides the default command to execute when starting a container
 CMD bash
