@@ -18,13 +18,17 @@
 
 ```sudo make run```
 
-### Navigate to the p3at tutorial folder
+### To launch the gazebo simulation environment run:
 
-```cd src/p3at_tutorial/```
+```roslaunch map_simulation map_simulation.launch```
 
-### To launch the p3at gazebo simulation environment run:
+### To run the slam algorithm:
 
-```roslaunch p3at_tutorial pioneer3at.gazebo.launch```
+```rosrun gmapping slam_gmapping scan:=/hokuyo_scan```
+
+### To make the robot explore:
+
+```roslaunch explore_lite explore.launch```
 
 ### To run other ros commands from another terminal run:
 
