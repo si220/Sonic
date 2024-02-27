@@ -7,7 +7,7 @@
     <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <!-- To use this world go to https://github.com/Gastd/cic and download the model -->
         <!-- <arg name="world_name" value="$(find map_simulation)/worlds/cic/cic.world"/> -->
-        <arg name="world_name" value="$(find map_simulation)/worlds/test.world"/>
+        <arg name="world_name" value="$(find map_simulation)/worlds/small_house_new.world"/>
     </include>
 
     <include file="$(find map_simulation)/launch/upload_pioneer3at.xml"/>
