@@ -7,3 +7,6 @@
 [submodule "ros_ws/src/aws-robomaker-small-house-world"]
 	path = ros_ws/src/aws-robomaker-small-house-world
 	url = https://github.com/aws-robotics/aws-robomaker-small-house-world.git
+	[submodule "ros_ws/src/hector_slam"]
+	path = ros_ws/src/hector_slam
+	url = https://github.com/aws-robotics/hector_slamgit
