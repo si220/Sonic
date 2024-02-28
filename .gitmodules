@@ -4,3 +4,6 @@
 [submodule "ros_ws/src/p3at_tutorial"]
 	path = ros_ws/src/p3at_tutorial
 	url = https://github.com/Gastd/p3at_tutorial.git
+[submodule "ros_ws/src/aws-robomaker-small-house-world"]
+	path = ros_ws/src/aws-robomaker-small-house-world
+	url = https://github.com/aws-robotics/aws-robomaker-small-house-world.git
