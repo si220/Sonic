@@ -4,9 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Navigation1
-        - /Path1
-        - /Pose1
+        - /RobotModel1/Status1
       Splitter Ratio: 0.5
     Tree Height: 1550
   - Class: rviz/Selection

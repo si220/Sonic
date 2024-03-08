@@ -17,6 +17,7 @@ run:
 		-it \
 		--privileged \
 		-e DISPLAY \
+		-v /dev:/dev \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ${CURRENT_DIR}/ros_ws/:/root/ros_ws/ \
 		--name ${CONTAINER_NAME} \

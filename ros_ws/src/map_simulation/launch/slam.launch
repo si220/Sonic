@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find map_simulation)/launch/upload_pioneer3at.xml"/>
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_pioneer" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model Pioneer3at" respawn="false" output="screen" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <include file="$(find map_simulation)/launch/slam_move_base.launch"/>
+
+    <arg name="geotiff_map_file_path" default="$(find hector_geotiff)/maps"/>
+
+    <param name="/use_sim_time" value="false"/>
+
+    <include file="$(find hector_mapping)/launch/mapping_default.launch"/>
+
+    <include file="$(find hector_geotiff_launch)/launch/geotiff_mapper.launch">
+        <arg name="trajectory_source_frame_name" value="scanmatcher_frame"/>
+        <arg name="map_file_path" value="$(arg geotiff_map_file_path)"/>
+    </include>
+    
+</launch>

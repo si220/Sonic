@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>map_simulation</name>
+  <name>rviz_robot</name>
   <version>0.0.0</version>
-  <description>The map_simulation package</description>
+  <description>The rviz_robot package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/map_simulation</url> -->
+  <!-- <url type="website">http://wiki.ros.org/rviz_robot</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -49,34 +49,21 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>amcl</build_depend>
-  <build_depend>base_local_planner</build_depend>
-  <build_depend>gazebo_ros</build_depend>
-  <build_depend>move_base</build_depend>
-  <build_depend>navfn</build_depend>
-  <build_depend>tf</build_depend>
-  <build_depend>urdf</build_depend>
-  <build_depend>xacro</build_depend>
-  <build_depend>hector_slam</build_depend>
-  <build_export_depend>amcl</build_export_depend>
-  <build_export_depend>base_local_planner</build_export_depend>
-  <build_export_depend>gazebo_ros</build_export_depend>
-  <build_export_depend>move_base</build_export_depend>
-  <build_export_depend>navfn</build_export_depend>
-  <build_export_depend>tf</build_export_depend>
-  <build_export_depend>urdf</build_export_depend>
-  <build_export_depend>xacro</build_export_depend>
-  <build_export_depend>hector_slam</build_export_depend>
-  <exec_depend>amcl</exec_depend>
-  <exec_depend>base_local_planner</exec_depend>
-  <exec_depend>gazebo_ros</exec_depend>
-  <exec_depend>move_base</exec_depend>
-  <exec_depend>navfn</exec_depend>
-  <exec_depend>tf</exec_depend>
-  <exec_depend>urdf</exec_depend>
-  <exec_depend>xacro</exec_depend>
-  <exec_depend>hector_slam</exec_depend>
-
+  <build_depend>p3at_tutorial</build_depend>
+  <build_depend>rosaria</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>rplidar_ros</build_depend>
+  <build_depend>map_simulation</build_depend>
+  <build_export_depend>p3at_tutorial</build_export_depend>
+  <build_export_depend>rosaria</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>rplidar_ros</build_export_depend>
+  <build_export_depend>map_simulation</build_export_depend>
+  <exec_depend>p3at_tutorial</exec_depend>
+  <exec_depend>rosaria</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>rplidar_ros</exec_depend>
+  <exec_depend>map_simulation</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
