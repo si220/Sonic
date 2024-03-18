@@ -43,7 +43,7 @@ export class App extends Component {
     if (newState === "idle") {
       this.setState({
         soundDetected: false,
-        dismissTime: Date.now() + 1000 * 60 * 5,
+        dismissTime: Date.now() /*+ 1000 * 60 * 5*/,
       })
     }
   }
