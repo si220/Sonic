@@ -1,0 +1,22 @@
+.Title {
+  display: flex;
+  justify-content: center;
+}
+
+.Title-Text {
+  width: 80vw;
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-color: rgb(52, 48, 48);
+  border-style: solid;
+  mask-border-width: 1px;
+  border-radius: 10px;
+
+  box-shadow: 3px 3px 5px;
+
+  background-color: var(--color-highlight);
+}

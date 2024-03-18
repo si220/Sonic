@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  padding: 5vh;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+
+.MainDisplay {
+  width: 80vw;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 3px solid black; */
+}
+
+#idle {
+  background-color: var(--color-idle);
+}
+#red {
+  background-color: var(--color-alert-red);
+}
+#amber {
+  background-color: var(--color-alert-amber);
+}
+#green {
+  background-color: var(--color-alert-green);
+}
