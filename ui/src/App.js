@@ -49,7 +49,9 @@ export class App extends Component {
   }
 
   handleSoundDetection(message) {
-    var sound = JSON.parse(message.data)
+    let correctedJsonString = message.data.replace(/'/g, '"');
+    console.log(correctedJsonString)
+    var sound = JSON.parse(correctedJsonString)
     var sameSound =
       sound.sound_type === this.state.soundInfo.sound_type &&
       Date.now() < this.state.dismissTime
@@ -70,20 +72,16 @@ export class App extends Component {
   }
 
   testButton() {
-    var test = {
-      data: '{ "sound_type" : "Alarm", "volume" : 4, "angle" : 270 }',
-    }
-
-    var soundTopic = new ROSLIB.Topic({
-      ros: this.ros,
-      name: "/sound",
-      messageType: "std_msgs/String",
-    })
-
-    var msg = new ROSLIB.Message(test)
-    soundTopic.publish(msg)
-
-    this.handleSoundDetection(test)
+    // Simulate a JSON string that might be received from a real ROS topic
+    var simulatedJsonString = '{ "sound_type" : "Alarm", "volume" : 4, "angle" : 270 }';
+  
+    // Create a test message object that mimics the structure of real ROS messages
+    var testMessage = {
+      data: simulatedJsonString
+    };
+  
+    // Directly use the simulated message as argument to handleSoundDetection
+    this.handleSoundDetection(testMessage);
   }
 
   componentDidMount() {
@@ -100,7 +98,7 @@ export class App extends Component {
     })
 
     //146.169.239.60
-    this.ros.connect("ws://146.169.239.60:9090")
+    this.ros.connect("ws://146.169.234.217:9090")
 
     var listener = new ROSLIB.Topic({
       ros: this.ros,
@@ -109,6 +107,7 @@ export class App extends Component {
     })
 
     listener.subscribe((message) => this.handleSoundDetection(message))
+    this.changeSonicState("idle")
   }
 
   componentWillUnmount() {
