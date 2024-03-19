@@ -49,7 +49,7 @@ export class App extends Component {
   }
 
   handleSoundDetection(message) {
-    let correctedJsonString = message.data.replace(/'/g, '"');
+    let correctedJsonString = message.data.replace(/'/g, '"')
     console.log(correctedJsonString)
     var sound = JSON.parse(correctedJsonString)
     var sameSound =
@@ -73,15 +73,16 @@ export class App extends Component {
 
   testButton() {
     // Simulate a JSON string that might be received from a real ROS topic
-    var simulatedJsonString = '{ "sound_type" : "Alarm", "volume" : 4, "angle" : 270 }';
-  
+    var simulatedJsonString =
+      '{ "sound_type" : "Alarm", "volume" : 4, "angle" : 270 }'
+
     // Create a test message object that mimics the structure of real ROS messages
     var testMessage = {
-      data: simulatedJsonString
-    };
-  
+      data: simulatedJsonString,
+    }
+
     // Directly use the simulated message as argument to handleSoundDetection
-    this.handleSoundDetection(testMessage);
+    this.handleSoundDetection(testMessage)
   }
 
   componentDidMount() {
