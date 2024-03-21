@@ -74,15 +74,24 @@ export class App extends Component {
   testButton() {
     // Simulate a JSON string that might be received from a real ROS topic
     var simulatedJsonString =
-      '{ "sound_type" : "alarm", "volume" : 400, "angle" : 90 }'
+      '{ "sound_type" : "door_bell", "volume" : 400, "angle" : 90 }'
 
-    // Create a test message object that mimics the structure of real ROS messages
-    var testMessage = {
-      data: simulatedJsonString,
-    }
+    //Create a test message object that mimics the structure of real ROS messages
+
+    var soundTopic = new ROSLIB.Topic({
+      ros: this.ros,
+      name: "/sound",
+      messageType: "std_msgs/String",
+    })
+
+    var msg = new ROSLIB.Message({ data: simulatedJsonString })
+    soundTopic.publish(msg)
 
     // Directly use the simulated message as argument to handleSoundDetection
-    this.handleSoundDetection(testMessage)
+    // var testMessage = {
+    //   data: simulatedJsonString,
+    // }
+    // this.handleSoundDetection(testMessage)
   }
 
   componentDidMount() {
@@ -99,7 +108,7 @@ export class App extends Component {
     })
 
     //146.169.239.60
-    this.ros.connect("ws://146.169.234.209:9090")
+    this.ros.connect("ws://146.169.239.125:9090")
 
     var listener = new ROSLIB.Topic({
       ros: this.ros,
@@ -150,7 +159,7 @@ export class App extends Component {
         {this.state.appState !== "idle" && (
           <ButtonContainer setAppState={this.updateStateFromButton} />
         )}
-        <button onClick={() => this.testButton()}>detect sound (test)</button>
+        {/* <button onClick={() => this.testButton()}>detect sound (test)</button> */}
       </div>
     )
   }
