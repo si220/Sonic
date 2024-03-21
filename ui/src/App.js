@@ -74,7 +74,7 @@ export class App extends Component {
   testButton() {
     // Simulate a JSON string that might be received from a real ROS topic
     var simulatedJsonString =
-      '{ "sound_type" : "Alarm", "volume" : 4, "angle" : 270 }'
+      '{ "sound_type" : "alarm", "volume" : 400, "angle" : 0 }'
 
     // Create a test message object that mimics the structure of real ROS messages
     var testMessage = {
@@ -118,7 +118,7 @@ export class App extends Component {
   render() {
     var text = ""
 
-    var bg = this.state.soundInfo.volume < 5 ? "amber" : "red"
+    var bg = this.state.soundInfo.volume / 1000 < 0.5 ? "amber" : "red"
     switch (this.state.appState) {
       case "sound detected":
         text = "SOUND DETECTED"
