@@ -12,12 +12,12 @@ class ButtonContainer extends Component {
         >
           Dismiss Notification
         </button>
-        <button
+        {/* <button
           className={"Button"}
           onClick={() => this.props.setAppState("point")}
         >
           Point to Location
-        </button>
+        </button> */}
         <button
           className={"Button"}
           onClick={() => this.props.setAppState("guide")}
