@@ -42,13 +42,12 @@ const SoundInfoContainer = (props) => {
         <progress value={1 - props.sound_info.volume / 1000} />
         <IoVolumeHighSharp size={"2em"} />
       </div>
-      <div className="progress-container">
-        <h1>Location:</h1>
+      {/* <div className="progress-container">
         <FaArrowUp
           size={"5em"}
           style={{ transform: "rotate(" + angle + ")" }}
         />
-      </div>
+      </div> */}
       {/* <div className="progress-container">
         <h1>Urgency: </h1>
         <progress value={1 - props.sound_urgency} />
