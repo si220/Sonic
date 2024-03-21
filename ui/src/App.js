@@ -150,7 +150,7 @@ export class App extends Component {
         {this.state.appState !== "idle" && (
           <ButtonContainer setAppState={this.updateStateFromButton} />
         )}
-        <button onClick={() => this.testButton()}>detect sound (test)</button>
+        {/* <button onClick={() => this.testButton()}>detect sound (test)</button> */}
       </div>
     )
   }
