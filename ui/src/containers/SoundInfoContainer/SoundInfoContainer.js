@@ -10,7 +10,7 @@ import { FiPhoneCall } from "react-icons/fi"
 const SoundInfoContainer = (props) => {
   var icon, text
   var sz = "10em"
-  var angle = props.sound_info.angle + "deg"
+  var angle = 360 - props.sound_info.angle + "deg"
   switch (props.sound_info.sound_type) {
     case "alarm":
       text = "Alarm"
