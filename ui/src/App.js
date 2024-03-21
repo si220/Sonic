@@ -99,7 +99,7 @@ export class App extends Component {
     })
 
     //146.169.239.60
-    this.ros.connect("ws://146.169.234.217:9090")
+    this.ros.connect("ws://146.169.234.209:9090")
 
     var listener = new ROSLIB.Topic({
       ros: this.ros,
@@ -150,7 +150,7 @@ export class App extends Component {
         {this.state.appState !== "idle" && (
           <ButtonContainer setAppState={this.updateStateFromButton} />
         )}
-        {/* <button onClick={() => this.testButton()}>detect sound (test)</button> */}
+        <button onClick={() => this.testButton()}>detect sound (test)</button>
       </div>
     )
   }
