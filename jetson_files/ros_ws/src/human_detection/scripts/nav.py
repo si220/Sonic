@@ -3,7 +3,7 @@ import rospy
 import actionlib
 import math
 import numpy as np
-from std_msgs.msg import String, Int32
+from std_msgs.msg import String, Int32, Bool
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionGoal
 from actionlib_msgs.msg import GoalStatusArray
 from geometry_msgs.msg import Twist
@@ -13,6 +13,7 @@ class WaypointNavigator:
     def __init__(self):
         rospy.init_node('Navigation', anonymous=True)
         self.twist_pub = rospy.Publisher('/RosAria/cmd_vel', Twist, queue_size = 1)
+        self.nudge_pub = rospy.Publisher('nudge', Bool, queue_size=1)
         self.ui_sub = rospy.Subscriber('state', String, self.ui_callback)
         self.client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
         self.client.wait_for_server()
@@ -53,6 +54,9 @@ class WaypointNavigator:
             status = status_array.status_list[0]
             if status.status == 3 and not self.goal_reached:  # Goal reached and not previously marked as reached
                 self.goal_reached = True
+                nudge_msg = Bool()
+                nudge_msg.data = True
+                self.nudge_pub.publish(nudge_msg) # publish to nudge topic for arduino to start arm movement
 
     def vis_callback(self, data):
         x = data.target_pose.pose.position.x 
