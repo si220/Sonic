@@ -32,7 +32,7 @@ State state;
 // using MPU6050 accelerometer
 
 // function gets called when message is received on topic "nudge"
-void nudgeCallback(const std_msgs::UInt16& cmd_msg) {
+void nudgeCallback(const std_msgs::Bool& cmd_msg) {
   // only start nudging if not already in progress
   if (state == IDLE){
     state = LOWER;
@@ -40,7 +40,7 @@ void nudgeCallback(const std_msgs::UInt16& cmd_msg) {
 }
 
 // subscribe to topic "nudge", redirect to nudgeCallback on message receipt
-ros::Subscriber<std_msgs::UInt16> nudgeSub(topic, &nudgeCallback);
+ros::Subscriber<std_msgs::Bool> nudgeSub(topic, &nudgeCallback);
 
 void setup() {
   Serial.begin(115200);
