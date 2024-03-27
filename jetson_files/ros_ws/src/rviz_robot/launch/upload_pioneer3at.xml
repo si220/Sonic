@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- send table.xml to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find rviz_robot)/robots/p3at.xacro" />
+
+</launch>
+
