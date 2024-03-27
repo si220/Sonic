@@ -1,0 +1,13 @@
+scan_filter_chain:
+  - name: exclude_120_to_140
+    type: laser_filters/AngleRangeFilter
+    params:
+      lower_angle: 2.094  # 120 degrees in radians
+      upper_angle: 2.443  # 140 degrees in radians
+      invert: false       # This excludes angles within the specified range
+  - name: exclude_220_to_240
+    type: laser_filters/AngleRangeFilter
+    params:
+      lower_angle: 3.839  # 220 degrees in radians
+      upper_angle: 4.188  # 240 degrees in radians
+      invert: false       # This excludes angles within the specified range
