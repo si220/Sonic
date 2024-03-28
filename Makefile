@@ -10,15 +10,26 @@ stop:
 build: stop
 	@docker build --tag=${IMAGE_NAME}:${TAG_NAME} .
 
-# Once you reach point 4, edit this command to mount your workspace.
 run:	
 	@xhost +si:localuser:root >> /dev/null
 	@docker run \
+                --device=/dev/video2:/dev/video0 \
+               --device=/dev/video2:/dev/video1 \
+	        --device=/dev/video2:/dev/video2 \
+	        --device=/dev/video3:/dev/video3 \
+	        --device=/dev/video4:/dev/video4 \
+	        --device=/dev/video5:/dev/video5 \
+	        --device=/dev/video6:/dev/video6 \
+	        --device=/dev/video7:/dev/video7 \
+	        --device=/dev/video8:/dev/video8 \
+	        --device=/dev/video9:/dev/video9 \
 		-it \
+		--privileged \
 		-e DISPLAY \
-		-e ROS_IP=192.168.1.210 \
+		-v /dev:/dev \
+		-e ROS_IP=146.169.177.188 \
 		--network host \
-		-e ROS_MASTER_URI=http://192.168.1.253:11311 \
+		-e ROS_MASTER_URI=http://146.169.177.188:11311 \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ${CURRENT_DIR}/ros_ws/:/root/ros_ws/ \
 		--name ${CONTAINER_NAME} \
