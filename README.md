@@ -3,8 +3,8 @@
 ## ELEC70015 Human Centred Robotics module at Imperial College London
 
 ## Authors: 
-Zack Reeves (01844549)
-Chun Hin Lau (01843940)
+Zack Reeves (01844549) _
+Chun Hin Lau (01843940) _
 Gian-Luca Fenocchi (01860614)
 Krrish Jain(02555321)
 Petar Barakov (01865450)
