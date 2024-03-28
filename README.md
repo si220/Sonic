@@ -1,19 +1,12 @@
 # Sonic - The robot hearing dog
 
-## ELEC70015 Human Centred Robotics module at Imperial College London
+## ELEC70015 Human Centred Robotics module at Imperial College London, March 2024
 
 ## Authors: 
-Zack Reeves (01844549)
+Zack Reeves (01844549),  Chun Hin Lau (01843940),  Gian-Luca Fenocchi (01860614),   Krrish Jain(02555321),  Petar Barakov (01865450)
 
-Chun Hin Lau (01843940)
+Donavon Clay (02541998),  Lun Tan (01842293),  Saifullah Ijaz (01854110),   Arthika Sivathasan (01921568)
 
-Gian-Luca Fenocchi (01860614)
+## Description:
 
-Krrish Jain(02555321)
-
-Petar Barakov (01865450)
-Donavon Clay (02541998)
-Lun Tan (01842293)
-Saifullah Ijaz (01854110)
-Arthika Sivathasan (01921568)
-
+This repository contains all relevant files created used in the design process of Sonic, a Robotic Hearing Dog meant to assist people with hearing loss. 
