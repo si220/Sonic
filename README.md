@@ -12,7 +12,7 @@ Donavon Clay (02541998),  Lun Tan (01842293),  Saifullah Ijaz (01854110),   Arth
 This repository contains all relevant files created used in the design process of Sonic, a Robotic Hearing Dog meant to assist people with hearing loss. The repository contains:
 
 - The [ROS workspace](ros_ws) that incluedes all ROS packages required for the operation of the robot.
-- The [3D models](3D-Prints) required to reconstruct the robotic arm, case for the LIDAR sensor, mounting bracket for the camera and the Jetson Housing.
+- The [3D models](3D-Prints) required to reconstruct the robotic arm, case for the LIDAR sensor, mounting bracket for the camera and the Jetson housing.
 - The [User Interface Website](ui) source code.
 
 Additionally, the repository contains a single Dockerfile and a single Makefile that are needed to create the virtual environment necessary for the operation of the robot.
